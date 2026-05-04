@@ -29,7 +29,7 @@ const SignIn = () => {
     try {
       // GET /api/login — credentials sent as JSON body
       // The backend reads req.body.email and req.body.password
-      const response = await api.post("/login", { email, password });
+      const response = await api.post("/auth/login", { email, password });
 
       // Store the user + token in context and localStorage
       const { accessToken, user } = response.data;
@@ -220,4 +220,5 @@ const SignIn = () => {
 };
 
 export default SignIn;
+
 
