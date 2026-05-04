@@ -24,7 +24,7 @@ export default function Profile() {
       try {
         // GET /api/profile — the JWT token is attached automatically by the
         // request interceptor in src/lib/api.js
-        const response = await api.get("/profile");
+        const response = await api.get("/users/me");
         setProfile(response.data);
       } catch (err) {
         setError(
@@ -117,3 +117,4 @@ export default function Profile() {
     </div>
   );
 }
+
