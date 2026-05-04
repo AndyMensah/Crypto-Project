@@ -38,7 +38,7 @@ export default function SignUp() {
 
     setSubmitting(true);
     try {
-      const response = await api.post("/register", { name, email, password });
+      const response = await api.post("/auth/register", { name, email, password });
       setUserId(response.data.userId);
       setStep("otp");
     } catch (err) {
@@ -61,7 +61,7 @@ export default function SignUp() {
 
     setSubmitting(true);
     try {
-      await api.post("/verify-email", { userId, otp });
+      await api.post("/auth/verify-email", { userId, otp });
       // Redirect to sign in page after successful verification
       navigate("/signin");
     } catch (err) {
@@ -255,3 +255,4 @@ export default function SignUp() {
     </div>
   );
 }
+
