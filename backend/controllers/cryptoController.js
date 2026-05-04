@@ -9,7 +9,7 @@ const Crypto = require("../models/Crypto");
 const getAllCryptos = async (req, res) => {
   try {
     const cryptos = await Crypto.find().sort({ createdAt: -1 });
-    res.json(cryptos);
+    res.json({ coins: cryptos });
   } catch (error) {
     res.status(500).json({ message: "Failed to fetch cryptocurrencies", error: error.message });
   }

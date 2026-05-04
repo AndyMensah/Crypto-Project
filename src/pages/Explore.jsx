@@ -19,7 +19,7 @@ const Explore = () => {
       try {
         // GET /api/crypto — returns all coins from MongoDB, newest first
         const response = await api.get("/crypto");
-        setAssets(response.data);
+        setAssets(response.data.coins || response.data);
       } catch (err) {
         setError(
           err.response?.data?.message ||
