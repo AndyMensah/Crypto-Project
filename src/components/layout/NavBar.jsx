@@ -562,12 +562,7 @@ const NavBar = () => {
             Sign In
           </Link>
 
-          <button
-            type="button"
-            className="bg-blue-600 text-white font-bold py-2 px-4 md:px-6 rounded-full hover:bg-blue-700 transition-colors text-sm md:text-base"
-          >
-            Sign Up
-          </button>
+          <Link to="/signup" className="bg-blue-600 text-white font-bold py-2 px-4 md:px-6 rounded-full hover:bg-blue-700 transition-colors text-sm md:text-base">Sign Up</Link>
 
           <button
             type="button"
@@ -588,3 +583,4 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
